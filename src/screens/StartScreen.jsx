@@ -1,7 +1,11 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function StartScreen() {
+export default function StartScreen({ navigation }) {
+    const getStartedHandler = () => {
+        navigation.replace('HomeTabs');
+    };
+
     return (
         <SafeAreaProvider>
             <SafeAreaView>
@@ -21,23 +25,24 @@ export default function StartScreen() {
                                 alignItems: "center",
                                 width: 390,
                                 height: 500,
-                                resizeMode: "strech",
+                                resizeMode: "stretch",
                             }}
                         />
                     </View>
                     <View>
-                        <Text style={{width: 200, textAlign: "center"}}>Experience the Essence of Luxury Perfumes</Text>
+                        <Text style={{ width: 200, textAlign: "center" }}>Experience the Essence of Luxury Perfumes</Text>
                     </View>
                     <View>
-                        <Pressable>
+                        <Pressable onPress={getStartedHandler}>
                             <View style={styles.blackButton}>
-                                <Text style={{color: "#fff", textAlign: "center"}}>Get Stared</Text>
+                                <Text style={{ color: "#fff", textAlign: "center" }}>Get Stared</Text>
                             </View>
                         </Pressable>
                     </View>
                 </View>
             </SafeAreaView>
         </SafeAreaProvider>
+
     )
 }
 
