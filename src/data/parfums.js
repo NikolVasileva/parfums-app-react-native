@@ -46,7 +46,7 @@ export const parfums = [
   {
     "id": "5",
     "image": "https://cdn.notinoimg.com/detail_main_mq/atelier-cologne/3614273985130_01-o/cologne-rare-gold-leather___240510.jpg",
-    "title": "Cologne Rare Gold Leather",
+    "title": "Rare Gold Leather",
     "brand": "Atelier Cologne",
     "description": "Bright citrus opening balanced with neroli and warm amber base.",
     "price": 58.99,

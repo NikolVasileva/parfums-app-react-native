@@ -8,11 +8,12 @@ import ParfumCard from "../components/ParfumCard";
 
 export default function HomeScreen({ style }) {
     const bestSellers = parfums.filter(item => item.isBestSeller).slice(0, 2);
+    const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView>
-                <ScrollView style={{ padding: 15,}}>
+            <SafeAreaView style={{backgroundColor: "#FBFBFB"}} >
+                <ScrollView style={{ padding: 15, }}>
                     {/* Header Section */}
                     <View style={{ alignItems: "center" }}>
                         <Image source={require("../../assets/logo-icon.png")}
@@ -25,7 +26,7 @@ export default function HomeScreen({ style }) {
                     </View>
 
                     {/* Best Sellerts Section */}
-                    <View style={{ gap: 15, padding: 10, }}>
+                    <View style={{ gap: 15, padding: 10, marginBottom: 20,}}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", }}>
                             <View style={{ gap: 10 }}>
                                 <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium" }}>Best Sellers</Text>
@@ -37,6 +38,26 @@ export default function HomeScreen({ style }) {
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
                             {bestSellers.map((item) => (
+                                <View style={{width: "48%"}} key={item.id}>
+                                    <ParfumCard {...item} />
+                                </View>
+                            ))}
+                        </View>
+                    </View>
+
+                    {/* Just Arrived Section */}
+                    <View style={{ gap: 15, padding: 10, }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", }}>
+                            <View style={{ gap: 10 }}>
+                                <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium" }}>Just Arrived</Text>
+                                <Text style={{ fontSize: 16, color: "#808080" }}>Recently Arrived Parfums</Text>
+                            </View>
+                            <View style={{ width: 100 }}>
+                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} />
+                            </View>
+                        </View>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                            {latestItems.map((item) => (
                                 <View style={{width: "48%"}} key={item.id}>
                                     <ParfumCard {...item} />
                                 </View>

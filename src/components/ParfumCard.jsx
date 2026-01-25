@@ -16,7 +16,7 @@ export default function ParfumCard({
                 <Image
                     source={{ uri: image }}
                     style={styles.image}
-                    resizeMode="cover"
+                    resizeMode="contain"
                 />
                 <Text style={[styles.price]}>${price}</Text>
             </View>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
         elevation: 3,
         padding: 10,
         width: "100%",
+        height: 270,
     },
     brand: {
         fontSize: 16,
