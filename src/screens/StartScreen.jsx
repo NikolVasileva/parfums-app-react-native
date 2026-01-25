@@ -1,7 +1,10 @@
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function StartScreen({ navigation }) {
+
+    const { width, height } = Dimensions.get("window");
+
     const getStartedHandler = () => {
         navigation.navigate('HomeTabs');
     };
@@ -19,12 +22,16 @@ export default function StartScreen({ navigation }) {
                             }}
                         />
                     </View>
-                    <View>
+                    <View style={{
+                        width: width,
+                        height: height * 0.60,
+                        overflow: "hidden",
+                    }}>
                         <Image source={require("../../assets/parfum-mockup.png")}
                             style={{
                                 alignItems: "center",
-                                width: 390,
-                                height: 300,
+                                width: "100%",
+                                height: "100%",
                                 resizeMode: "cover",
                             }}
                         />
