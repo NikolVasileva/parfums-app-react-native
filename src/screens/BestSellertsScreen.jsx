@@ -1,4 +1,4 @@
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView } from "react-native";
@@ -7,8 +7,12 @@ import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
 
 
-export default function BestSellersScreen() {
+export default function BestSellersScreen({navigation}) {
     const bestSellers = parfums.filter(item => item.isBestSeller);
+
+    const arrowPressHandler = () => {
+        navigation.navigate("HomeScreen")
+    }
 
     return (
         <SafeAreaProvider>
@@ -16,13 +20,15 @@ export default function BestSellersScreen() {
                 <ScrollView style={{ padding: 15, }}>
                     {/* Header Section */}
                     <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
-                        <Image source={require("../../assets/arrow.png")}
-                            style={{
-                                width: 33,
-                                height: 35,
-                                margin: 25,
-                            }}
-                        />
+                        <Pressable onPress={arrowPressHandler}>
+                            <Image source={require("../../assets/arrow.png")}
+                                style={{
+                                    width: 33,
+                                    height: 35,
+                                    margin: 25,
+                                }}
+                            />
+                        </Pressable>
                         <Image source={require("../../assets/logo-icon.png")}
                             style={{
                                 width: 33,
