@@ -16,11 +16,25 @@ export default function HomeScreen({ navigation }) {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={{backgroundColor: "#FBFBFB"}} >
+            <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
                 <ScrollView style={{ padding: 15, }}>
                     {/* Header Section */}
-                    <View style={{ alignItems: "center" }}>
+                    <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
+                        <Image source={require("../../assets/menu.png")}
+                            style={{
+                                width: 25,
+                                height: 25,
+                                margin: 25,
+                            }}
+                        />
                         <Image source={require("../../assets/logo-icon.png")}
+                            style={{
+                                width: 33,
+                                height: 35,
+                                margin: 25,
+                            }}
+                        />
+                        <Image source={require("../../assets/search.png")}
                             style={{
                                 width: 33,
                                 height: 35,
@@ -30,19 +44,19 @@ export default function HomeScreen({ navigation }) {
                     </View>
 
                     {/* Best Sellerts Section */}
-                    <View style={{ gap: 15, padding: 10, marginBottom: 20,}}>
+                    <View style={{ gap: 15, padding: 10, marginBottom: 20, }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", }}>
                             <View style={{ gap: 10 }}>
                                 <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium" }}>Best Sellers</Text>
                                 <Text style={{ fontSize: 16, color: "#808080" }}>The Best Parfume Ever</Text>
                             </View>
                             <View style={{ width: 100 }}>
-                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} onPress={bestSellerHandler}/>
+                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} onPress={bestSellerHandler} />
                             </View>
                         </View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {bestSellers.map((item) => (
-                                <View style={{width: "48%"}} key={item.id}>
+                                <View style={{ width: "48%" }} key={item.id}>
                                     <ParfumCard {...item} />
                                 </View>
                             ))}
@@ -60,9 +74,9 @@ export default function HomeScreen({ navigation }) {
                                 <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} />
                             </View>
                         </View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {latestItems.map((item) => (
-                                <View style={{width: "48%"}} key={item.id}>
+                                <View style={{ width: "48%" }} key={item.id}>
                                     <ParfumCard {...item} />
                                 </View>
                             ))}
