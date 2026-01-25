@@ -11,7 +11,7 @@ export default function StartScreen({ navigation }) {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView>
+            <SafeAreaView style={{backgroundColor: "#FFFFFF"}}>
                 <View style={styles.startContainer}>
                     <View>
                         <Image source={require("../../assets/parfum-logo.png")}
