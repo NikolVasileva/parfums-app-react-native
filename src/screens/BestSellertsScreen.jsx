@@ -15,7 +15,14 @@ export default function BestSellersScreen() {
             <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
                 <ScrollView style={{ padding: 15, }}>
                     {/* Header Section */}
-                    <View style={{ alignItems: "center" }}>
+                    <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
+                        <Image source={require("../../assets/arrow.png")}
+                            style={{
+                                width: 33,
+                                height: 35,
+                                margin: 25,
+                            }}
+                        />
                         <Image source={require("../../assets/logo-icon.png")}
                             style={{
                                 width: 33,
@@ -23,17 +30,24 @@ export default function BestSellersScreen() {
                                 margin: 25,
                             }}
                         />
-                        <View style={{ gap: 10, padding: 20 }}>
-                            <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium", alignItems: "center", textAlign: "center" }}>Best Sellers</Text>
-                            <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Parfume Ever</Text>
-                        </View>
+                        <Image source={require("../../assets/share.png")}
+                            style={{
+                                width: 33,
+                                height: 35,
+                                margin: 25,
+                            }}
+                        />
+                    </View>
+                    <View style={{ gap: 10, padding: 20 }}>
+                        <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium", alignItems: "center", textAlign: "center" }}>Best Sellers</Text>
+                        <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Parfume Ever</Text>
                     </View>
 
                     {/* Best Sellerts Section */}
-                    <View style={{ gap: 15, padding: 10, marginBottom: 20,}}>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap"}}>
+                    <View style={{ gap: 15, padding: 10, marginBottom: 20, }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap" }}>
                             {bestSellers.map((item) => (
-                                <View style={{width: "48%", marginBottom: 20}} key={item.id}>
+                                <View style={{ width: "48%", marginBottom: 20 }} key={item.id}>
                                     <ParfumCard {...item} />
                                 </View>
                             ))}
