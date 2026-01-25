@@ -6,9 +6,13 @@ import BlackButton from "../components/BlackButton";
 import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
 
-export default function HomeScreen({ style }) {
+export default function HomeScreen({ navigation }) {
     const bestSellers = parfums.filter(item => item.isBestSeller).slice(0, 2);
     const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
+
+    const bestSellerHandler = () => {
+        navigation.navigate('BestSellersScreen');
+    }
 
     return (
         <SafeAreaProvider>
@@ -33,7 +37,7 @@ export default function HomeScreen({ style }) {
                                 <Text style={{ fontSize: 16, color: "#808080" }}>The Best Parfume Ever</Text>
                             </View>
                             <View style={{ width: 100 }}>
-                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} />
+                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} onPress={bestSellerHandler}/>
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
