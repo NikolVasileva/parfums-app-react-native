@@ -3,12 +3,16 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView } from "react-native";
 import BlackButton from "../components/BlackButton";
+import { parfums } from "../data/parfums";
+import ParfumCard from "../components/ParfumCard";
 
 export default function HomeScreen({ style }) {
+    const bestSellers = parfums.filter(item => item.isBestSeller).slice(0, 2);
+
     return (
         <SafeAreaProvider>
             <SafeAreaView>
-                <ScrollView style={{ padding: 15 }}>
+                <ScrollView style={{ padding: 15,}}>
                     {/* Header Section */}
                     <View style={{ alignItems: "center" }}>
                         <Image source={require("../../assets/logo-icon.png")}
@@ -21,8 +25,8 @@ export default function HomeScreen({ style }) {
                     </View>
 
                     {/* Best Sellerts Section */}
-                    <View>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                    <View style={{ gap: 15, padding: 10, }}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", }}>
                             <View style={{ gap: 10 }}>
                                 <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium" }}>Best Sellers</Text>
                                 <Text style={{ fontSize: 16, color: "#808080" }}>The Best Parfume Ever</Text>
@@ -30,6 +34,13 @@ export default function HomeScreen({ style }) {
                             <View style={{ width: 100 }}>
                                 <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} />
                             </View>
+                        </View>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between"}}>
+                            {bestSellers.map((item) => (
+                                <View style={{width: "48%"}} key={item.id}>
+                                    <ParfumCard {...item} />
+                                </View>
+                            ))}
                         </View>
                     </View>
                 </ScrollView>
