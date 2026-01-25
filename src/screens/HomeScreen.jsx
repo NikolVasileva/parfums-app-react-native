@@ -12,6 +12,10 @@ export default function HomeScreen({ navigation }) {
 
     const bestSellerHandler = () => {
         navigation.navigate('BestSellersScreen');
+    };
+
+    const justArrivedHandler = () => {
+        navigation.navigate('JustArrivedScreen');
     }
 
     return (
@@ -71,7 +75,7 @@ export default function HomeScreen({ navigation }) {
                                 <Text style={{ fontSize: 16, color: "#808080" }}>Recently Arrived Parfums</Text>
                             </View>
                             <View style={{ width: 100 }}>
-                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} />
+                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} onPress={justArrivedHandler}/>
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>

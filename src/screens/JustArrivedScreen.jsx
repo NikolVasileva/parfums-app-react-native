@@ -5,8 +5,8 @@ import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
 
 
-export default function BestSellersScreen({navigation}) {
-    const bestSellers = parfums.filter(item => item.isBestSeller);
+export default function JustArrivedScreen({navigation}) {
+    const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
     const arrowPressHandler = () => {
         navigation.navigate("HomeScreen")
@@ -47,10 +47,10 @@ export default function BestSellersScreen({navigation}) {
                         <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Parfume Ever</Text>
                     </View>
 
-                    {/* Best Sellerts Section */}
+                    {/* Just Arrived Section */}
                     <View style={{ gap: 15, padding: 10, marginBottom: 20, }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap" }}>
-                            {bestSellers.map((item) => (
+                            {latestItems.map((item) => (
                                 <View style={{ width: "48%", marginBottom: 20 }} key={item.id}>
                                     <ParfumCard {...item} />
                                 </View>
