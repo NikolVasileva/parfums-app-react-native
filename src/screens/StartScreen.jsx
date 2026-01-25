@@ -3,7 +3,7 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function StartScreen({ navigation }) {
     const getStartedHandler = () => {
-        navigation.replace('HomeTabs');
+        navigation.navigate('HomeTabs');
     };
 
     return (
@@ -24,8 +24,8 @@ export default function StartScreen({ navigation }) {
                             style={{
                                 alignItems: "center",
                                 width: 390,
-                                height: 500,
-                                resizeMode: "stretch",
+                                height: 300,
+                                resizeMode: "cover",
                             }}
                         />
                     </View>
@@ -65,3 +65,4 @@ const styles = StyleSheet.create({
         elevation: 5,
     }
 })
+
