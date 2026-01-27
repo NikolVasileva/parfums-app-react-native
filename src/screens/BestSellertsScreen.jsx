@@ -42,7 +42,7 @@ export default function BestSellersScreen({navigation}) {
                             }}
                         />
                     </View>
-                    <View style={{ gap: 10, padding: 20 }}>
+                    <View style={{ gap: 10, padding: 10 }}>
                         <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium", alignItems: "center", textAlign: "center" }}>Best Sellers</Text>
                         <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Parfume Ever</Text>
                     </View>
