@@ -18,6 +18,10 @@ export default function HomeScreen({ navigation }) {
         navigation.navigate('JustArrivedScreen');
     }
 
+    const parfumCardPressedHandler = (parfumId) => {
+        navigation.navigate('DetailsScreen', { parfumId })
+    }
+
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
@@ -61,7 +65,7 @@ export default function HomeScreen({ navigation }) {
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {bestSellers.map((item) => (
                                 <View style={{ width: "48%" }} key={item.id}>
-                                    <ParfumCard {...item} />
+                                    <ParfumCard {...item} onPress={parfumCardPressedHandler}/>
                                 </View>
                             ))}
                         </View>
@@ -81,7 +85,7 @@ export default function HomeScreen({ navigation }) {
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {latestItems.map((item) => (
                                 <View style={{ width: "48%" }} key={item.id}>
-                                    <ParfumCard {...item} />
+                                    <ParfumCard {...item} onPress={parfumCardPressedHandler}/>
                                 </View>
                             ))}
                         </View>

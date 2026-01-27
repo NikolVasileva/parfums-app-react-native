@@ -6,10 +6,11 @@ export default function ParfumCard({
     brand,
     title,
     image,
-    price
+    price,
+    onPress,
 }) {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => onPress(id)}>
             <View style={[styles.card]}>
                 <Text style={[styles.brand]}>{brand}</Text>
                 <Text style={[styles.title]}>{title}</Text>
