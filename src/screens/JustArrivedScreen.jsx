@@ -10,7 +10,11 @@ export default function JustArrivedScreen({navigation}) {
 
     const arrowPressHandler = () => {
         navigation.navigate("HomeScreen")
-    }
+    };
+
+    const parfumCardPressedHandler = (parfumId) => {
+        navigation.navigate('DetailsScreen', { parfumId })
+    };
 
     return (
         <SafeAreaProvider>
@@ -52,7 +56,7 @@ export default function JustArrivedScreen({navigation}) {
                         <View style={{ flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap" }}>
                             {latestItems.map((item) => (
                                 <View style={{ width: "48%", marginBottom: 20 }} key={item.id}>
-                                    <ParfumCard {...item} />
+                                    <ParfumCard {...item} onPress={parfumCardPressedHandler}/>
                                 </View>
                             ))}
                         </View>
