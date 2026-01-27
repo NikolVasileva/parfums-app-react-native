@@ -1,12 +1,15 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
-export default function DetailsScreen({route}) {
+export default function DetailsScreen({
+    route,
+    navigation
+}) {
 
     const { parfumId } = route.params;
 
     const arrowPressHandler = () => {
-        navigation.navigate("HomeScreen")
+        navigation.goBack()
     };
 
     return(

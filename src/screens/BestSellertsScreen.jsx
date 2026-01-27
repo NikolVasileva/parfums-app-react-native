@@ -9,7 +9,7 @@ export default function BestSellersScreen({navigation}) {
     const bestSellers = parfums.filter(item => item.isBestSeller);
 
     const arrowPressHandler = () => {
-        navigation.navigate("HomeScreen")
+        navigation.goBack()
     };
 
     const parfumCardPressedHandler = (parfumId) => {

@@ -9,7 +9,7 @@ export default function JustArrivedScreen({navigation}) {
     const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
     const arrowPressHandler = () => {
-        navigation.navigate("HomeScreen")
+        navigation.goBack()
     };
 
     const parfumCardPressedHandler = (parfumId) => {
