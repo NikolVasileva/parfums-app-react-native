@@ -52,7 +52,7 @@ export default function JustArrivedScreen({navigation}) {
                     </View>
 
                     {/* Just Arrived Section */}
-                    <View style={{ gap: 15, padding: 10, marginBottom: 20, }}>
+                    <View style={{ gap: 15, padding: 5, marginBottom: 20, }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap" }}>
                             {latestItems.map((item) => (
                                 <View style={{ width: "48%", marginBottom: 20 }} key={item.id}>

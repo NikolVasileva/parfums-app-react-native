@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
-                <ScrollView style={{ padding: 15, }}>
+                <ScrollView style={{ padding: 10, }}>
                     {/* Header Section */}
                     <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
                         <Image source={require("../../assets/menu.png")}
