@@ -1,5 +1,6 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { getParfumById } from "../data/parfums";
 
 export default function DetailsScreen({
     route,
@@ -7,12 +8,15 @@ export default function DetailsScreen({
 }) {
 
     const { parfumId } = route.params;
+    const parfum = getParfumById(parfumId)
+    console.log('parfumId:', parfumId);
+
 
     const arrowPressHandler = () => {
         navigation.goBack()
     };
 
-    return(
+    return (
         <SafeAreaProvider>
             <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
                 <ScrollView style={{ padding: 15, }}>
@@ -42,9 +46,18 @@ export default function DetailsScreen({
                             }}
                         />
                     </View>
+                    <View style={{alignItems: "center",}}>
+                        <Image
+                            source={{ uri: parfum.image }}
+                            style={{ width: 185, height: 300, }}
+                            resizeMode="contain"
+                        />
+                    </View>
+
 
                 </ScrollView>
             </SafeAreaView>
         </SafeAreaProvider>
     )
+
 }

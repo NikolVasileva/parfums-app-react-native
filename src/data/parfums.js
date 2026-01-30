@@ -55,3 +55,5 @@ export const parfums = [
     "rating": 4.6
   }
 ]
+
+export const getParfumById = (id) => parfums.find((item) => item.id === id)
