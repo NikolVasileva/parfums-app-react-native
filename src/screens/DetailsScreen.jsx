@@ -46,16 +46,25 @@ export default function DetailsScreen({
                             }}
                         />
                     </View>
-                    <View style={{alignItems: "center", backgroundColor:"#F5F5F5", borderRadius: 20,}}>
+                    <View style={{ alignItems: "center", backgroundColor: "#F5F5F5", borderRadius: 20, }}>
                         <Image
                             source={{ uri: parfum.image }}
                             style={{ width: "100%", height: 300, }}
                             resizeMode="contain"
                         />
                     </View>
-                    <View style={{paddingVertical: 15, gap: 10,}}>
-                        <Text style={{fontSize: 22, }}>{parfum.brand} {parfum.title}</Text>
-                        <Text style={{fontSize: 16,}}>{parfum.description}</Text>
+                    <View style={{ paddingVertical: 15, gap: 10, }}>
+                        <Text style={{ fontSize: 22, }}>{parfum.brand} {parfum.title}</Text>
+                        <View style={{flexDirection: "row", gap: 15}}>
+                            <Image source={require("../../assets/stars.png")}
+                                style={{
+                                    width: 110,
+                                    height: 18,
+                                }}
+                            />
+                            <Text style={{ fontSize: 16, }}>{parfum.rating}</Text>
+                        </View>
+                        <Text style={{ fontSize: 16, color: "#808080"}}>{parfum.description}</Text>
                     </View>
                 </ScrollView>
             </SafeAreaView>
