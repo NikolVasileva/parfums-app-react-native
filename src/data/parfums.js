@@ -4,7 +4,7 @@ export const parfums = [
     "image": "https://cdn2.easycosmetic.ch/images/Produkte/D2/lancome-tresor-midnight-rose-leau-de-parfum-spray-30ml.png",
     "title": "Midnight Rose",
     "brand": "Lancome",
-    "description": "A sensual blend of rose, vanilla and patchouli for elegant evenings.",
+    "description": "A sensual blend of rose, vanilla and patchouli for elegant evenings. A sensual blend of rose, vanilla and patchouli for elegant evenings.",
     "price": 89.99,
     "isBestSeller": true,
     "createdAt": "2024-11-10",

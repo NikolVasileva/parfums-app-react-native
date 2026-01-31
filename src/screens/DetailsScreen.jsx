@@ -1,6 +1,7 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { getParfumById } from "../data/parfums";
+import BlackButton from "../components/BlackButton";
 
 export default function DetailsScreen({
     route,
@@ -55,7 +56,7 @@ export default function DetailsScreen({
                     </View>
                     <View style={{ paddingVertical: 15, gap: 10, }}>
                         <Text style={{ fontSize: 22, }}>{parfum.brand} {parfum.title}</Text>
-                        <View style={{flexDirection: "row", gap: 15}}>
+                        <View style={{ flexDirection: "row", gap: 15 }}>
                             <Image source={require("../../assets/stars.png")}
                                 style={{
                                     width: 110,
@@ -64,7 +65,27 @@ export default function DetailsScreen({
                             />
                             <Text style={{ fontSize: 16, }}>{parfum.rating}</Text>
                         </View>
-                        <Text style={{ fontSize: 16, color: "#808080"}}>{parfum.description}</Text>
+                        <Text style={{ fontSize: 16, color: "#808080" }}>{parfum.description}</Text>
+                        <Text style={{ fontSize: 16, color: "#808080", paddingTop: 15, }}>Price:</Text>
+                        <Text style={{ fontSize: 16, color: "#262825" }}>${parfum.price}</Text>
+                    </View>
+                    <View
+                        style={{
+                            width: "100%",
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "space-between",
+                            gap: 20,
+                        }}
+                    >
+
+                        <Image source={require("../../assets/favourite-icon.png")}
+                            style={{
+                                width: 25,
+                                height: 25,
+                            }}
+                        />
+                        <BlackButton title="Add to Cart" style={{ paddingHorizontal: 12, paddingVertical: 15, flex: 1,}} />
                     </View>
                 </ScrollView>
             </SafeAreaView>

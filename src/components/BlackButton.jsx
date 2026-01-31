@@ -7,8 +7,8 @@ export default function BlackButton({
     style
 }) {
     return (
-        <Pressable onPress={onPress}>
-            <View style={[styles.blackButton, style]}>
+        <Pressable onPress={onPress} style={[styles.blackButton, style]}>
+            <View>
                 <Text style={{ color: "#fff", textAlign: "center" }}>{title}</Text>
             </View>
         </Pressable>
@@ -21,10 +21,6 @@ const styles = StyleSheet.create({
     },
     blackButton: {
         backgroundColor: "#262825",
-        // paddingHorizontal: 35,
-        // paddingVertical: 20,
-        // margin: 25,
-        // width: 300,
         borderBottomLeftRadius: 20,
         borderTopRightRadius: 20,
         shadowColor: '#000',
