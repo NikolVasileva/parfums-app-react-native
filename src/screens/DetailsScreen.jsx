@@ -53,8 +53,10 @@ export default function DetailsScreen({
                             resizeMode="contain"
                         />
                     </View>
-
-
+                    <View style={{paddingVertical: 15, gap: 10,}}>
+                        <Text style={{fontSize: 22, }}>{parfum.brand} {parfum.title}</Text>
+                        <Text style={{fontSize: 16,}}>{parfum.description}</Text>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </SafeAreaProvider>
