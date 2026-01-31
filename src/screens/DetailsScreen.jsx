@@ -19,7 +19,7 @@ export default function DetailsScreen({
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
+            <SafeAreaView style={{ backgroundColor: "#FBFBFB", flex: 1, }} >
                 <ScrollView style={{ padding: 15, }}>
                     {/* Header Section */}
                     <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
@@ -69,25 +69,30 @@ export default function DetailsScreen({
                         <Text style={{ fontSize: 16, color: "#808080", paddingTop: 15, }}>Price:</Text>
                         <Text style={{ fontSize: 16, color: "#262825" }}>${parfum.price}</Text>
                     </View>
-                    <View
-                        style={{
-                            width: "100%",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            gap: 20,
-                        }}
-                    >
-
-                        <Image source={require("../../assets/favourite-icon.png")}
-                            style={{
-                                width: 25,
-                                height: 25,
-                            }}
-                        />
-                        <BlackButton title="Add to Cart" style={{ paddingHorizontal: 12, paddingVertical: 15, flex: 1,}} />
-                    </View>
                 </ScrollView>
+                <View
+                    style={{
+                        width: "100%",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: 20,
+                        position: "static",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        padding: 15,
+                    }}
+                >
+
+                    <Image source={require("../../assets/favourite-icon.png")}
+                        style={{
+                            width: 25,
+                            height: 25,
+                        }}
+                    />
+                    <BlackButton title="Add to Cart" style={{ paddingHorizontal: 12, paddingVertical: 15, flex: 1, }} />
+                </View>
             </SafeAreaView>
         </SafeAreaProvider>
     )
