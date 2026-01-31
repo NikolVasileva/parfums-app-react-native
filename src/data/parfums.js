@@ -12,7 +12,7 @@ export const parfums = [
   },
   {
     "id": "2",
-    "image": "https://flora-parfums.com/wp-content/uploads/2025/07/OCEAN-WHISPER-IBRAQ.webp",
+    "image": "https://www.hubbuloud.shop/cdn/shop/files/IMG-0485.png?v=1755014487&width=1920",
     "title": "Ocean Whisper",
     "brand": "Ibrahim Al Qurashi",
     "description": "Fresh aquatic notes with hints of citrus and white musk.",
@@ -23,7 +23,7 @@ export const parfums = [
   },
   {
     "id": "3",
-    "image": "https://cdn.notinoimg.com/social/orientica/6297001158050_01-o/amber-noir___241024.jpg",
+    "image": "https://www.orienticaperfumes.com/cdn/shop/files/Amber-Noir-bottle1_grande.png?v=1761538820",
     "title": "Amber Noir",
     "brand": "Orientica",
     "description": "Warm amber, spices and woody accords for a bold signature scent.",
@@ -34,7 +34,7 @@ export const parfums = [
   },
   {
     "id": "4",
-    "image": "https://cdn.notinoimg.com/detail_main_mq/tom-ford/888066023955_01-o/velvet-orchid___211110.jpg",
+    "image": "https://sdcdn.io/tf/tf_sku_T1X401_2000x2000_0.png?height=1400px&width=1400px",
     "title": "Velvet Orchid",
     "brand": "Tom Ford",
     "description": "Soft floral bouquet with jasmine, peony and creamy sandalwood.",
@@ -45,7 +45,7 @@ export const parfums = [
   },
   {
     "id": "5",
-    "image": "https://cdn.notinoimg.com/detail_main_mq/atelier-cologne/3614273985130_01-o/cologne-rare-gold-leather___240510.jpg",
+    "image": "https://www.myperfumeshop.qa/cdn/shop/files/atelier-cologne-gold-leather-pure-perfume-perfume-cologne-151238.png?v=1722391852&width=2048",
     "title": "Rare Gold Leather",
     "brand": "Atelier Cologne",
     "description": "Bright citrus opening balanced with neroli and warm amber base.",
