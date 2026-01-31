@@ -24,33 +24,33 @@ export default function HomeScreen({ navigation }) {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={{ backgroundColor: "#FBFBFB", flex: 1  }} >
-                <ScrollView style={{ padding: 10, }}>
-                    {/* Header Section */}
-                    <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
-                        <Image source={require("../../assets/menu.png")}
-                            style={{
-                                width: 25,
-                                height: 25,
-                                margin: 25,
-                            }}
-                        />
-                        <Image source={require("../../assets/logo-icon.png")}
-                            style={{
-                                width: 33,
-                                height: 35,
-                                margin: 25,
-                            }}
-                        />
-                        <Image source={require("../../assets/search.png")}
-                            style={{
-                                width: 33,
-                                height: 35,
-                                margin: 25,
-                            }}
-                        />
-                    </View>
+            <SafeAreaView style={{ backgroundColor: "#FBFBFB", flex: 1 }} >
+                {/* Header Section */}
+                <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
+                    <Image source={require("../../assets/menu.png")}
+                        style={{
+                            width: 25,
+                            height: 25,
+                            margin: 25,
+                        }}
+                    />
+                    <Image source={require("../../assets/logo-icon.png")}
+                        style={{
+                            width: 33,
+                            height: 35,
+                            margin: 25,
+                        }}
+                    />
+                    <Image source={require("../../assets/search.png")}
+                        style={{
+                            width: 33,
+                            height: 35,
+                            margin: 25,
+                        }}
+                    />
+                </View>
 
+                <ScrollView style={{ paddingHorizontal: 10, }}>
                     {/* Best Sellerts Section */}
                     <View style={{ gap: 15, padding: 10, marginBottom: 20, }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", }}>
@@ -65,7 +65,7 @@ export default function HomeScreen({ navigation }) {
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {bestSellers.map((item) => (
                                 <View style={{ width: "48%" }} key={item.id}>
-                                    <ParfumCard {...item} onPress={parfumCardPressedHandler}/>
+                                    <ParfumCard {...item} onPress={parfumCardPressedHandler} />
                                 </View>
                             ))}
                         </View>
@@ -79,13 +79,13 @@ export default function HomeScreen({ navigation }) {
                                 <Text style={{ fontSize: 16, color: "#808080" }}>Recently Arrived Parfums</Text>
                             </View>
                             <View style={{ width: 100 }}>
-                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} onPress={justArrivedHandler}/>
+                                <BlackButton title="see all >" style={{ paddingHorizontal: 12, paddingVertical: 6 }} onPress={justArrivedHandler} />
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
                             {latestItems.map((item) => (
                                 <View style={{ width: "48%" }} key={item.id}>
-                                    <ParfumCard {...item} onPress={parfumCardPressedHandler}/>
+                                    <ParfumCard {...item} onPress={parfumCardPressedHandler} />
                                 </View>
                             ))}
                         </View>
