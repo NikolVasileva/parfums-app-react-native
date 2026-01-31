@@ -18,7 +18,7 @@ export default function BestSellersScreen({navigation}) {
 
     return (
         <SafeAreaProvider>
-            <SafeAreaView style={{ backgroundColor: "#FBFBFB" }} >
+            <SafeAreaView style={{ backgroundColor: "#FBFBFB", flex: 1 }} >
                 <ScrollView style={{ padding: 10, }}>
                     {/* Header Section */}
                     <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
