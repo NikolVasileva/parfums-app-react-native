@@ -20,33 +20,33 @@ export default function DetailsScreen({
     return (
         <SafeAreaProvider>
             <SafeAreaView style={{ backgroundColor: "#FBFBFB", flex: 1, }} >
-                <ScrollView style={{ padding: 15, }}>
-                    {/* Header Section */}
-                    <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
-                        <Pressable onPress={arrowPressHandler}>
-                            <Image source={require("../../assets/arrow.png")}
-                                style={{
-                                    width: 33,
-                                    height: 35,
-                                    margin: 25,
-                                }}
-                            />
-                        </Pressable>
-                        <Image source={require("../../assets/logo-icon.png")}
+                {/* Header Section */}
+                <View style={{ alignItems: "center", flexDirection: "row", justifyContent: "space-between" }}>
+                    <Pressable onPress={arrowPressHandler}>
+                        <Image source={require("../../assets/arrow.png")}
                             style={{
                                 width: 33,
                                 height: 35,
                                 margin: 25,
                             }}
                         />
-                        <Image source={require("../../assets/share.png")}
-                            style={{
-                                width: 33,
-                                height: 35,
-                                margin: 25,
-                            }}
-                        />
-                    </View>
+                    </Pressable>
+                    <Image source={require("../../assets/logo-icon.png")}
+                        style={{
+                            width: 33,
+                            height: 35,
+                            margin: 25,
+                        }}
+                    />
+                    <Image source={require("../../assets/share.png")}
+                        style={{
+                            width: 33,
+                            height: 35,
+                            margin: 25,
+                        }}
+                    />
+                </View>
+                <ScrollView style={{ paddingHorizontal: 15, }}>
                     <View style={{ alignItems: "center", backgroundColor: "#F5F5F5", borderRadius: 20, }}>
                         <Image
                             source={{ uri: parfum.image }}
@@ -84,7 +84,6 @@ export default function DetailsScreen({
                         padding: 15,
                     }}
                 >
-
                     <Image source={require("../../assets/favourite-icon.png")}
                         style={{
                             width: 25,
