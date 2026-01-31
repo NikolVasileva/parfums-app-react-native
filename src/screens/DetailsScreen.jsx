@@ -46,10 +46,10 @@ export default function DetailsScreen({
                             }}
                         />
                     </View>
-                    <View style={{alignItems: "center",}}>
+                    <View style={{alignItems: "center", backgroundColor:"#F5F5F5", borderRadius: 20,}}>
                         <Image
                             source={{ uri: parfum.image }}
-                            style={{ width: 185, height: 300, }}
+                            style={{ width: "100%", height: 300, }}
                             resizeMode="contain"
                         />
                     </View>

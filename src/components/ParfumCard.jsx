@@ -17,7 +17,7 @@ export default function ParfumCard({
                 <Image
                     source={{ uri: image }}
                     style={styles.image}
-                    resizeMode="contain"
+                    resizeMode="cover"
                 />
                 <Text style={[styles.price]}>${price}</Text>
             </View>
