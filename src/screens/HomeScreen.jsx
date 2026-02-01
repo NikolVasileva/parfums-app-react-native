@@ -13,7 +13,7 @@ export default function HomeScreen({ navigation }) {
     // const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
 
     const [getAllFarfums, setAllFarmuns] = useState([]);
-    const latestArrivedParfums = getAllFarfums.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
+    const latestArrivedParfums = getAllFarfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
 
 
     const [bestSellersParfums, setBestSellersParfums] = useState([]);

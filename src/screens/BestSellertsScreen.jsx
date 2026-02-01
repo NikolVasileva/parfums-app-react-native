@@ -1,12 +1,26 @@
 import { Image, Pressable, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native";
-import { parfums } from "../data/parfums";
+// import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
+import { useEffect, useState } from "react";
+import { fetchBestSellersParfums } from "../api/parfumsApi";
 
 
 export default function BestSellersScreen({ navigation }) {
-    const bestSellers = parfums.filter(item => item.isBestSeller);
+    const [bestSellers, setBestSellers] = useState([]);
+
+    useEffect(() => {
+        fetchBestSellersParfums()
+        .then(result => {
+            setBestSellers(result.data)
+        })
+        .catch(err => {
+            alert("Cannot fetch all best sellers parfums")
+        })
+    }, [])
+
+    // const bestSellers = parfums.filter(item => item.isBestSeller);
 
     const arrowPressHandler = () => {
         navigation.goBack()
