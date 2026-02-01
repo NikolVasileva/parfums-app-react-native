@@ -26,10 +26,8 @@ export default function HomeScreen({ navigation }) {
         })
         .catch(err => {
             alert("Cannot get all parfums")
-        })
-    }, [])
+        });
 
-    useEffect(() => {
         fetchBestSellersParfums()
         .then(result => {
             setBestSellersParfums(result.data);
@@ -37,7 +35,18 @@ export default function HomeScreen({ navigation }) {
         .catch(err => {
             alert("Cannot fetch best sellers parfums")
         })
+
     }, [])
+
+    // useEffect(() => {
+    //     fetchBestSellersParfums()
+    //     .then(result => {
+    //         setBestSellersParfums(result.data);
+    //     })
+    //     .catch(err => {
+    //         alert("Cannot fetch best sellers parfums")
+    //     })
+    // }, [])
     
     const bestSellerHandler = () => {
         navigation.navigate('BestSellersScreen');
