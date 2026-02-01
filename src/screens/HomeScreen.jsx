@@ -19,24 +19,46 @@ export default function HomeScreen({ navigation }) {
     const [bestSellersParfums, setBestSellersParfums] = useState([]);
     const bestSellersListSliced = bestSellersParfums.slice(0, 2);
 
+    const [toggleRefresh, setRefresh] = useState(false);
+    const [redreshing, setRefreshing] = useState(true)
+
     useEffect(() => {
-        fetchGetAllParfums()
-        .then(result => {
-            setAllFarmuns(result.data)
-        })
-        .catch(err => {
-            alert("Cannot get all parfums")
-        });
+        async function fetchData() {
+            setRefreshing(true);
 
-        fetchBestSellersParfums()
-        .then(result => {
-            setBestSellersParfums(result.data);
-        })
-        .catch(err => {
-            alert("Cannot fetch best sellers parfums")
-        })
+            try {
+                const getAllResults = await fetchGetAllParfums();
+                setAllFarmuns(getAllResults.data);
 
-    }, [])
+                const getAllBestSellersResult = await fetchBestSellersParfums();
+                setBestSellersParfums(getAllBestSellersResult.data);
+            } catch (err) {
+                alert("Cannot load parfums")
+            }
+            finally {
+                setRefreshing(false);
+            }
+        }
+
+        fetchData()
+
+        // fetchGetAllParfums()
+        // .then(result => {
+        //     setAllFarmuns(result.data)
+        // })
+        // .catch(err => {
+        //     alert("Cannot get all parfums")
+        // });
+
+        // fetchBestSellersParfums()
+        // .then(result => {
+        //     setBestSellersParfums(result.data);
+        // })
+        // .catch(err => {
+        //     alert("Cannot fetch best sellers parfums")
+        // })
+
+    }, [toggleRefresh])
 
     // useEffect(() => {
     //     fetchBestSellersParfums()
