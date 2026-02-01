@@ -6,14 +6,28 @@ import BlackButton from "../components/BlackButton";
 import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
 import { useEffect, useState } from "react";
-import { fetchBestSellersParfums } from "../api/parfumsApi";
+import { fetchBestSellersParfums, fetchGetAllParfums } from "../api/parfumsApi";
 
 export default function HomeScreen({ navigation }) {
     // const bestSellers = parfums.filter(item => item.isBestSeller).slice(0, 2);
-    const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
+    // const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
+
+    const [getAllFarfums, setAllFarmuns] = useState([]);
+    const latestArrivedParfums = getAllFarfums.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
+
 
     const [bestSellersParfums, setBestSellersParfums] = useState([]);
-    const bestSellersListSliced = bestSellersParfums.slice(0, 2)
+    const bestSellersListSliced = bestSellersParfums.slice(0, 2);
+
+    useEffect(() => {
+        fetchGetAllParfums()
+        .then(result => {
+            setAllFarmuns(result.data)
+        })
+        .catch(err => {
+            alert("Cannot get all parfums")
+        })
+    }, [])
 
     useEffect(() => {
         fetchBestSellersParfums()
@@ -98,7 +112,7 @@ export default function HomeScreen({ navigation }) {
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            {latestItems.map((item) => (
+                            {latestArrivedParfums.map((item) => (
                                 <View style={{ width: "48%" }} key={item.id}>
                                     <ParfumCard {...item} onPress={parfumCardPressedHandler} />
                                 </View>
