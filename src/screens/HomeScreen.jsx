@@ -5,11 +5,26 @@ import { ScrollView } from "react-native";
 import BlackButton from "../components/BlackButton";
 import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
+import { useEffect, useState } from "react";
+import { fetchBestSellersParfums } from "../api/parfumsApi";
 
 export default function HomeScreen({ navigation }) {
-    const bestSellers = parfums.filter(item => item.isBestSeller).slice(0, 2);
+    // const bestSellers = parfums.filter(item => item.isBestSeller).slice(0, 2);
     const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 2);
 
+    const [bestSellersParfums, setBestSellersParfums] = useState([]);
+    const bestSellersListSliced = bestSellersParfums.slice(0, 2)
+
+    useEffect(() => {
+        fetchBestSellersParfums()
+        .then(result => {
+            setBestSellersParfums(result.data);
+        })
+        .catch(err => {
+            alert("Cannot fetch best sellers parfums")
+        })
+    }, [])
+    
     const bestSellerHandler = () => {
         navigation.navigate('BestSellersScreen');
     };
@@ -63,7 +78,7 @@ export default function HomeScreen({ navigation }) {
                             </View>
                         </View>
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            {bestSellers.map((item) => (
+                            {bestSellersListSliced.map((item) => (
                                 <View style={{ width: "48%" }} key={item.id}>
                                     <ParfumCard {...item} onPress={parfumCardPressedHandler} />
                                 </View>
