@@ -1,12 +1,27 @@
 import { Image, Pressable, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native";
-import { parfums } from "../data/parfums";
+// import { parfums } from "../data/parfums";
 import ParfumCard from "../components/ParfumCard";
+import { useEffect, useState } from "react";
+import { fetchGetAllParfums } from "../api/parfumsApi";
 
 
 export default function JustArrivedScreen({ navigation }) {
-    const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    // const latestItems = parfums.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+    const [allParfum, setAllParfums] = useState([]);
+    const latestArrivedParfums = allParfum.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+
+    useEffect(() => {
+        fetchGetAllParfums()
+        .then(result => {
+            setAllParfums(result.data)
+        })
+        .catch(err => {
+            alert("Cannot fetch all parfums arrived latest")
+        })
+    }, [])
 
     const arrowPressHandler = () => {
         navigation.goBack()
@@ -54,7 +69,7 @@ export default function JustArrivedScreen({ navigation }) {
                     {/* Just Arrived Section */}
                     <View style={{ gap: 15, padding: 5, marginBottom: 20, }}>
                         <View style={{ flexDirection: "row", justifyContent: "space-between", flexWrap: "wrap" }}>
-                            {latestItems.map((item) => (
+                            {latestArrivedParfums.map((item) => (
                                 <View style={{ width: "48%", marginBottom: 20 }} key={item.id}>
                                     <ParfumCard {...item} onPress={parfumCardPressedHandler} />
                                 </View>
