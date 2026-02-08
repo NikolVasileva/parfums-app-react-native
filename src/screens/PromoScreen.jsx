@@ -6,6 +6,7 @@ import ParfumCard from "../components/ParfumCard";
 import { fetchPromoParfums } from "../api/parfumsApi";
 
 export default function PromoScreen({ navigation }) {
+    
     const arrowPressHandler = () => {
         navigation.goBack()
     };
@@ -22,8 +23,15 @@ export default function PromoScreen({ navigation }) {
             })
     }, []);
 
+    // const parfumCardPressedHandler = (parfumId) => {
+    //     navigation.navigate('DetailsScreen', { parfumId })
+    // };
+
     const parfumCardPressedHandler = (parfumId) => {
-        navigation.navigate('DetailsScreen', { parfumId })
+        navigation.navigate("Home", {
+            screen: "DetailsScreen",
+            params: { parfumId },
+        });
     };
 
     return (
