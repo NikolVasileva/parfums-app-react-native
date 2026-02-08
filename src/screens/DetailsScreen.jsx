@@ -67,7 +67,15 @@ export default function DetailsScreen({
                         </View>
                         <Text style={{ fontSize: 16, color: "#808080" }}>{parfum.description}</Text>
                         <Text style={{ fontSize: 16, color: "#808080", paddingTop: 15, }}>Price:</Text>
+                        {parfum?.isPromo 
+                        ?
+                        <View>
+                            <Text style={{ fontSize: 18, color: "#925076" }}>${parfum.promoPrice}</Text>
+                            <Text style={{ fontSize: 16, color: "#262825", textDecorationLine: "line-through" }}>${parfum.price}</Text>
+                        </View>
+                        : 
                         <Text style={{ fontSize: 16, color: "#262825" }}>${parfum.price}</Text>
+                        }
                     </View>
                 </ScrollView>
                 <View

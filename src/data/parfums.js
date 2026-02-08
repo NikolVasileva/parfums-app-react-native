@@ -8,7 +8,9 @@ export const parfums = [
     "price": 89.99,
     "isBestSeller": true,
     "createdAt": "2024-11-10",
-    "rating": 4.8
+    "rating": 4.8,
+    "isPromo": true,
+    "promoPrice": 60.00
   },
   {
     "id": "2",
@@ -19,7 +21,9 @@ export const parfums = [
     "price": 74.50,
     "isBestSeller": false,
     "createdAt": "2024-12-01",
-    "rating": 4.3
+    "rating": 4.3,
+    "isPromo": true,
+    "promoPrice": 50.00
   },
   {
     "id": "3",
