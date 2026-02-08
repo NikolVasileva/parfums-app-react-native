@@ -42,11 +42,11 @@ export default function CountdownTimer({endDate}) {
 
     return (
         <View style={styles.container}>
-          {/* {timeLeft.days > 0 && (
+          {timeLeft.days > 0 && (
             <>
-              <Text style={styles.time}>{timeLeft.days}д : </Text>
+              <Text style={styles.time}>{timeLeft.days} дни : </Text>
             </>
-          )} */}
+          )}
           <Text style={styles.time}>{pad(timeLeft.hours)} ч. : </Text>
           <Text style={styles.time}>{pad(timeLeft.minutes)} мин. : </Text>
           <Text style={styles.time}>{pad(timeLeft.seconds)} сек. </Text>
