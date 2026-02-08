@@ -9,3 +9,9 @@ export async function fetchBestSellersParfums() {
 
     return api.get(url);
 }
+
+export async function fetchPromoParfums() {
+    let url = "/parfums?isPromo=true"
+
+    return api.get(url);
+}
