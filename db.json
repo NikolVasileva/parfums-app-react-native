@@ -9,7 +9,9 @@
       "price": 89.99,
       "isBestSeller": true,
       "createdAt": "2024-11-10",
-      "rating": 4.8
+      "rating": 4.8,
+      "isPromo": true,
+      "promoPrice": 60
     },
     {
       "id": "2",
@@ -20,7 +22,9 @@
       "price": 74.5,
       "isBestSeller": false,
       "createdAt": "2024-12-01",
-      "rating": 4.3
+      "rating": 4.3,
+      "isPromo": true,
+      "promoPrice": 50
     },
     {
       "id": "3",

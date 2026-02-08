@@ -8,6 +8,8 @@ export default function ParfumCard({
     image,
     price,
     onPress,
+    promoPrice,
+    isPromo,
 }) {
     return (
         <TouchableOpacity onPress={() => onPress(id)}>
@@ -19,7 +21,15 @@ export default function ParfumCard({
                     style={styles.image}
                     resizeMode="cover"
                 />
+                {isPromo 
+                ? 
+                <View>
+                    <Text style={[styles.promoPrice]}>${promoPrice}</Text>
+                    <Text style={[styles.price, styles.secondPrice]}>${price}</Text>
+                </View>
+                : 
                 <Text style={[styles.price]}>${price}</Text>
+                }
             </View>
         </TouchableOpacity>
     )
@@ -55,9 +65,18 @@ const styles = StyleSheet.create({
         textAlign: "center",
         padding: 10,
     },
+    promoPrice: {
+        fontSize: 18,
+        color: '#925076',
+        textAlign: "center",
+        padding: 0,
+    },
     image: {
         width: "100%",
         height: 150,
     },
+    secondPrice: {
+        textDecorationLine: "line-through",
+    }
 }
 )
