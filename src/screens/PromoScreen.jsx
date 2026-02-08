@@ -1,7 +1,8 @@
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import CountdownTimer from "../components/CountdownTimer";
 
-export default function PromoScreen() {
+export default function PromoScreen({navigation}) {
     const arrowPressHandler = () => {
         navigation.goBack()
     };
@@ -34,9 +35,10 @@ export default function PromoScreen() {
                         }}
                     />
                 </View>
-                <View style={{ gap: 15, padding: 5 }}>
+                <View style={{ gap: 15, padding: 5, }}>
                     <Text style={{ fontSize: 24, color: "#262825", fontWeight: "medium", alignItems: "center", textAlign: "center" }}>Promo Deals</Text>
-                    <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Parfume Ever</Text>
+                    <Text style={{ fontSize: 16, color: "#808080", alignItems: "center", textAlign: "center" }}>The Best Promo Deals</Text>
+                    <CountdownTimer endDate={new Date(2026, 5, 10, 23, 59, 59)}/>
                 </View>
             </SafeAreaView>
         </SafeAreaProvider>
